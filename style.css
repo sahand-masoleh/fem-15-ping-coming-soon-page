@@ -19,7 +19,7 @@
 	--gray: hsl(0, 0%, 59%);
 	--very-dark-blue: hsl(209, 33%, 12%);
 
-	--margin: 1em;
+	--margin: 4em;
 	font-size: 12px;
 }
 
@@ -33,7 +33,7 @@ body {
 main {
 	margin: var(--margin);
 	margin-top: 4em;
-	gap: calc(var(--margin) * 3);
+	gap: var(--margin);
 	max-width: 40em;
 }
 
@@ -55,7 +55,7 @@ img {
 /* TITLE */
 
 #title {
-	gap: var(--margin);
+	gap: 1em;
 }
 
 #logo {
@@ -64,7 +64,7 @@ img {
 }
 
 #title h1 {
-	font-size: 1.5em;
+	font-size: 2em;
 }
 
 #title span {
@@ -78,41 +78,148 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: var(--margin);
+	align-items: flex-start;
+	align-content: flex-start;
+	gap: 1.5em 1em;
+	position: relative;
+	height: 10em;
 }
 
-#email-container input {
+#input-container {
 	flex-grow: 1;
 	flex-basis: 35ch;
+}
+
+#input-container input {
 	border-radius: 2em;
-	border: 1px solid var(--gray);
-	padding: 1.5ch;
+	border: none;
+	outline: 1px solid var(--gray);
+	padding: 1em 2em;
+	font-weight: 600;
+}
+
+#email-container input:placeholder-shown {
+	color: var(--gray);
+}
+
+#input-container::after {
+	content: attr(data-error);
+	width: 100%;
+	color: var(--light-red);
+	font-style: italic;
+	font-weight: 600;
+	font-size: 0.8em;
+	position: relative;
+	bottom: -0.2em;
 }
 
 #email-container button {
+	border: none;
 	flex-grow: 1;
 	flex-basis: content;
 	border-radius: 2em;
-	border: 1px solid var(--gray);
 	background-color: var(--blue);
 	color: white;
-	padding: 1.5ch;
+	padding: 1em 2em;
+	font-weight: 600;
 }
 
-/* IMAGE */
-
-#image {
-	margin-top: 3em;
+#email-container button:hover {
+	cursor: pointer;
+	background-color: var(--pale-blue);
 }
 
 /* FOOTER */
 
 footer {
-	font-size: 11px;
+	position: relative;
+	bottom: 1em;
+	font-size: 0.75em;
 	text-align: center;
 	place-items: center;
+	color: var(--gray);
 }
 
 footer a {
 	color: hsl(228, 45%, 44%);
+}
+
+#socials {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#socials p {
+	flex-basis: 100%;
+}
+
+.social-icon-containers {
+	border: 1px solid rgb(0, 0, 0, 0.1);
+	border-radius: 50%;
+	margin: 1em;
+}
+
+.social-icon-containers:hover {
+	background-color: var(--blue);
+	cursor: pointer;
+}
+
+.social-icons {
+	width: 2ch;
+	padding: 10px;
+	aspect-ratio: 1;
+	background-color: var(--blue);
+	mask-size: 2ch 2ch;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-clip: border-box;
+	-webkit-mask-size: 2ch 2ch;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-clip: border-box;
+}
+
+.social-icons:hover {
+	background-color: white;
+}
+
+.social-icon-containers:nth-of-type(1) > .social-icons {
+	mask-image: url(./images/facebook-f-brands.svg);
+	-webkit-mask-image: url(./images/facebook-f-brands.svg);
+}
+
+.social-icon-containers:nth-of-type(2) > .social-icons {
+	mask-image: url(./images/twitter-brands.svg);
+	-webkit-mask-image: url(./images/twitter-brands.svg);
+}
+
+.social-icon-containers:nth-of-type(3) > .social-icons {
+	mask-image: url(./images/instagram-brands.svg);
+	-webkit-mask-image: url(./images/instagram-brands.svg);
+}
+
+@media screen and (min-width: 480px) {
+	main {
+		gap: calc(var(--margin) / 2);
+	}
+	#logo {
+		width: 5em;
+	}
+
+	#title h1 {
+		font-size: 2.5em;
+	}
+	#title p {
+		font-size: 1.25em;
+	}
+
+	#email-container {
+		height: unset;
+		text-align: left;
+	}
+
+	#input-container::after {
+		left: 3em;
+	}
 }

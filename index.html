@@ -12,13 +12,15 @@
 <body>
 
   <main class="flex-column">
+
     <div id="title" class="flex-column">
       <img src="images/logo.svg" alt="logo" id="logo">
       <h1><span>We are launching</span> soon!</h1>
       <p>Subscribe and get notified</p>
     </div>
+
     <form id="email-container" novalidate>
-      <input type="email" name="email" placeholder="Your email address...">
+      <div id="input-container"><input type="email" name="email" placeholder="Your email address..."></div>
       <button type="submit">Notify Me</button>
     </form>
     <div id="image">
@@ -28,6 +30,16 @@
 
   <footer>
     <div id="socials">
+      <div class="social-icon-containers">
+        <div aria-label="facebook" class="social-icons"></div>
+      </div>
+      <div class="social-icon-containers">
+        <div aria-label="twitter" class="social-icons">
+        </div>
+      </div>
+      <div class="social-icon-containers">
+        <div aria-label="instagram" class="social-icons"></div>
+      </div>
       <p>&copy; Copyright Ping. All rights reserved.</p>
     </div>
     <p>
