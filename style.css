@@ -126,11 +126,15 @@ img {
 	color: white;
 	padding: 1em 2em;
 	font-weight: 600;
+	cursor: pointer;
 }
 
 #email-container button:hover {
-	cursor: pointer;
 	background-color: var(--pale-blue);
+}
+
+#email-container button:active {
+	transform: scale(0.95);
 }
 
 /* FOOTER */
@@ -162,11 +166,11 @@ footer a {
 	border: 1px solid rgb(0, 0, 0, 0.1);
 	border-radius: 50%;
 	margin: 1em;
+	cursor: pointer;
 }
 
 .social-icon-containers:hover {
 	background-color: var(--blue);
-	cursor: pointer;
 }
 
 .social-icons {
