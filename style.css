@@ -85,6 +85,10 @@ img {
 	height: 10em;
 }
 
+#email-container input:placeholder-shown {
+	color: var(--gray);
+}
+
 #input-container {
 	flex-grow: 1;
 	flex-basis: 35ch;
@@ -98,11 +102,11 @@ img {
 	font-weight: 600;
 }
 
-#email-container input:placeholder-shown {
-	color: var(--gray);
+#input-container.error input {
+	outline: 1px solid var(--light-red);
 }
 
-#input-container::after {
+#input-container.error::after {
 	content: attr(data-error);
 	width: 100%;
 	color: var(--light-red);
@@ -215,7 +219,7 @@ footer a {
 	}
 
 	#email-container {
-		height: unset;
+		height: 6em;
 		text-align: left;
 	}
 
